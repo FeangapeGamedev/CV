@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/*play here with the colors for your website*/
 :root {
     --primary: #6366f1;
     --secondary: #8b5cf6;
@@ -12,7 +13,8 @@
     --gray: #64748b;
     --light-gray: #f1f5f9;
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); /* Original gradient */
+    --header-gradient: linear-gradient(135deg, #222831 0%, #393e46 30%, #00adb5 70%, #eeeeee 100%); /* Dark to teal gradient for header */
     --shadow: 0 10px 30px rgba(0,0,0,0.1);
     --glow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
@@ -55,7 +57,7 @@ body {
 
 /* HEADER SECTION - Using Flexbox */
 .header {
-    background: var(--gradient);
+    background: var(--header-gradient);
     position: relative;
     overflow: hidden;
     padding: clamp(40px, 6vw, 60px) clamp(20px, 4vw, 50px);
@@ -65,23 +67,6 @@ body {
     align-items: center;
     text-align: center;
     gap: clamp(20px, 3vw, 30px);
-}
-
-.header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
-    animation: drift 20s linear infinite;
-}
-
-@keyframes drift {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(-30px, -30px) rotate(360deg); }
 }
 
 .header-content {
